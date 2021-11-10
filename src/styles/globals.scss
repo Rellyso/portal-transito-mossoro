@@ -1,0 +1,32 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "PantonBlackCaps";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("PantonBlackCaps"), url(/fonts/PantonBlackCaps.otf) format("otf");
+}
+
+@font-face {
+  font-family: "Rede Rounded F31";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Rede Rounded"), url(/fonts/Rede\ Rounded\ F31.ttf) format("ttf");
+}
