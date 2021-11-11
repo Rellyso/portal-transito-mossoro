@@ -16,7 +16,7 @@ const Fonts = () => (
         font-style: normal;
         font-weight: 700;
         font-display: swap;
-        src: url("../fonts/Rede\ Rounded\ F31.ttf") format('ttf');
+        src: url("../fonts/RedeRoundedF31.ttf") format('ttf');
       }
     `}
   />
