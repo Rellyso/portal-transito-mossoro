@@ -1,156 +1,125 @@
-import { Box, Flex, Image, Text, Button, Link, Heading } from '@chakra-ui/react';
+import { Box, Flex, Icon, Text, Button, Link, Divider, Heading, SimpleGrid } from '@chakra-ui/react';
 import Head from 'next/head'
+import NextLink from 'next/link'
+import { MdRecordVoiceOver } from 'react-icons/md';
+import { BoxFX } from '../components/Animated/BoxFX';
+import { Header } from '../components/Header';
 import { HIconList } from '../components/HIconList'
+import { ServicesBar } from '../components/ServicesBar';
 
 import styles from '../styles/Home.module.scss';
 
 export default function Home() {
   return (
-    <Box className={styles.container}>
+    <Box className={styles.container}
+      bgColor="white"
+
+    >
       <Head>
         <title>GETRAN | Prefeitura de Mossoró</title>
       </Head>
 
-      <Flex
-        as="header"
+      <ServicesBar />
 
-        flexDir="column"
-        justify="center"
-        align="center"
-
-        className={styles.main_header}
-        w="100%"
-      >
-        {/* services bar */}
-        <Flex
-          className={styles.services_bar}
-          w="100%"
-          bgColor="white"
-          px="8"
-          align="center"
-          justify="space-between"
-        >
-          <Image
-            src="/images/mossoro-logo.png"
-            h="12"
-          />
-
-          <Box>
-            <Link href="#" color="blue.700" fontWeight="medium">Serviços</Link>
-          </Box>
-        </Flex>
-
-        {/* header one */}
-        <Flex
-          align="center"
-          justify="center"
-          py="4"
-          w="100%"
-          className={styles.header_container_one}
-        >
-          <Image
-            h="16"
-            src="images/logo2.png"
-            alt="Brasão prefeitura de mossoró"
-            className={styles.brasao}
-          />
-          <Box className={`${styles.header_dividers} ${styles.dividers_top}`}>
-            <span />
-            <span />
-            <span />
-            <span />
-          </Box>
-        </Flex>
-
-        {/* header two */}
-        <Flex
-          align="center"
-          justify="center"
-          py="4"
-          w="100%"
-          className={styles.header_container_two}
-        >
-          <Box className={styles.consulta_veiculo_card}>
-            <Button w="6">Gerência de trânsito</Button>
-
-            <Box className={styles.cv_card_items}>
-              <Box className={styles.cv_card_item}>
-                {/* <Image
-                  src="images/radar.png"
-                  alt="RADAR"
-
-                  h="16"
-                /> */}
-                <Text
-                  fontSize="lg"
-                  pt="6"
-                  px="4"
-                >
-                  Conheça os serviços que oferecemos a população mossoroense
-                </Text>
-
-                <HIconList />
-
-                <Link href="#">SAIBA MAIS</Link>
-              </Box>
-
-              {/* <Divider /> */}
-
-            </Box>
-          </Box>
-        </Flex>
-
-        {/* header three */}
-
-        <Box
-          className={styles.header_container_three}
-          display="flex"
-          align="center"
-          justify="center"
-          w="100%"
-          py="4"
-          bg="white"
-        >
-          <Box
-            display="flex"
-            align="baseline"
-            justifyContent="flex-start"
-            className={`${styles.header_dividers} ${styles.dividers_bottom}`}
-          >
-            <span />
-            <span />
-            <span />
-            <span />
-          </Box>
-          <Heading
-            textAl="center"
-            className={styles.heading_text}
-          >
-            <Link href="#">
-              GETRAN
-            </Link>
-          </Heading>
-        </Box>
-
-        {/* <div
-          className="header-container-three w-100 d-flex flex-row justify-content-center align-items-center py-4 bg-white">
-          <div className="header-dividers dividers-bottom">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <h1 className="text-center heading-text text-white">
-            <a href="#notificacoes">Edital de notificação</a>
-          </h1>
-        </div> */}
-      </Flex>
+      <Header />
 
       <Flex
         as="main"
-
+        minH="100vh"
+        maxW="1140px"
+        w="100%"
+        pt="16"
+        px="4"
+        mx="auto"
+        direction="column"
       >
+        <Heading size="2xl" fontWeight="bold">Serviços</Heading>
+        <Divider my="4" />
 
+        <SimpleGrid minChildWidth="330px">
+          <BoxFX
+            whileHover={{ scale: 1.01, boxShadow: '0px 0px 0px 2px rgba(0, 0, 0, 0.05)' }}
+            transition={{ ease: "easeOut" }}
+
+            mt="10"
+
+            h="500px"
+            bgColor="white"
+            minW="330px"
+            maxW="370px"
+            rounded="60px"
+            px="6"
+            py="28px"
+            boxShadow="0px 0px 5px 4px rgba(0, 0, 0, 0.05)"
+
+            display="flex"
+            flexDir="column"
+            justifyContent="space-between"
+          >
+            <Flex
+              w="100%"
+              bgColor="#00ADEF"
+              rounded="30px"
+              h="180px"
+              align="center"
+              justify="center"
+            >
+              <Icon as={MdRecordVoiceOver} fontSize="160px" color="white" />
+            </Flex>
+
+            <Heading
+              as="h3"
+              size="lg"
+              fontWeight="medium"
+              mt="8"
+            >
+              Solicitar palestra
+            </Heading>
+            <Heading
+              as="h6"
+              size="sm"
+              color="gray.300"
+              fontWeight="medium"
+            >
+              Educação
+            </Heading>
+
+            <Text
+              mt="8"
+              fontFamily="heading"
+            >
+              Clique aqui e solicite uma palestra sobre educação no trânsito.
+            </Text>
+
+            <NextLink
+              href="#"
+            >
+
+              <Button
+                href="#"
+
+                fontSize="2xl"
+                py="6"
+                textDecor="none"
+                rounded="30"
+                mt="auto"
+
+                color="#00ADEF"
+                bg="transparent"
+                borderColor="#00ADEF"
+                borderWidth="4px"
+
+                transition="ease .2s"
+
+                _hover={{
+                  brightness: 0.9
+                }}
+              >
+                ACESSE AQUI
+              </Button>
+            </NextLink>
+          </BoxFX>
+        </SimpleGrid>
       </Flex>
     </Box>
   )
