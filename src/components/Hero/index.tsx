@@ -5,7 +5,7 @@ import { HIconList } from "../HIconList";
 
 import styles from './styles.module.scss'
 
-export function Header() {
+export function Hero() {
   return (
     <Flex
       as="header"
@@ -69,7 +69,7 @@ export function Header() {
 
               <HIconList />
 
-              <Link href="#">SAIBA MAIS</Link>
+              <Link href="#services">SAIBA MAIS</Link>
             </Box>
 
             {/* <Divider /> */}
@@ -103,8 +103,8 @@ export function Header() {
           textAl="center"
           className={styles.heading_text}
         >
-          <Link href="#" color="white">
-            GETRAN
+          <Link href="#" color="white" letterSpacing="2px">
+            SESDEM
           </Link>
         </Heading>
       </Box>
