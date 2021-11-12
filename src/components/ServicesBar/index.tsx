@@ -1,7 +1,6 @@
 import { Image } from "@chakra-ui/image";
 import { Box, Flex, Link, HStack } from "@chakra-ui/layout";
 import { useEffect, useState } from "react";
-import { FlexFX } from "../Animated/FlexFX";
 import { HeaderDividers } from "../HeaderDividers";
 
 import styles from './styles.module.scss';
@@ -18,7 +17,7 @@ export function ServicesBar() {
     window.addEventListener('resize', updateWindowDimensions);
 
     window.addEventListener('scroll', () => {
-      setIsTop((window.scrollY + 1) <= dimensions.height);
+      setIsTop(window.scrollY <= dimensions.height);
       console.log({ scrollY: window.scrollY + 1, dimensions: dimensions.height })
     });
 

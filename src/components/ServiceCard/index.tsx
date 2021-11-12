@@ -56,6 +56,7 @@ export function ServiceCard({ title, sector, description, icon, href }: Props) {
             size="lg"
             fontWeight="medium"
             mt="6"
+            color="gray.900"
           >
             {title}
           </Heading>
@@ -79,7 +80,7 @@ export function ServiceCard({ title, sector, description, icon, href }: Props) {
           hyphens="auto"
 
           minH="80px"
-
+          color="gray.800"
         >
           {description}
         </Text>
