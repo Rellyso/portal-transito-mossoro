@@ -60,11 +60,12 @@ export function Hero() {
                   h="16"
                 /> */}
               <Text
-                fontSize="lg"
+                fontSize="xl"
                 pt="6"
+                pb="2"
                 px="4"
               >
-                Conheça os serviços que oferecemos a população mossoroense
+                Conheça abaixo os serviços que oferecemos a população mossoroense
               </Text>
 
               <HIconList />
