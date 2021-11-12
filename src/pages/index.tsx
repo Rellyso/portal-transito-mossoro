@@ -1,4 +1,4 @@
-import { Box, Flex, Icon, Text, Button, Link, Divider, Heading, SimpleGrid } from '@chakra-ui/react';
+import { Box, Flex, Icon, Text, Button, Grid, Divider, Heading, SimpleGrid, Image } from '@chakra-ui/react';
 import Head from 'next/head'
 import NextLink from 'next/link'
 import { ImBooks } from 'react-icons/im';
@@ -13,6 +13,8 @@ import { ServicesBar } from '../components/ServicesBar';
 
 import styles from '../styles/Home.module.scss';
 import { HiPencilAlt } from 'react-icons/hi';
+import { useEffect, useState } from 'react';
+import { HeaderDividers } from '../components/HeaderDividers';
 
 export default function Home() {
   return (
@@ -41,8 +43,8 @@ export default function Home() {
       >
         <Heading
           size="2xl"
-          fontWeight="500"
-          color="gray.800"
+          fontWeight="semibold"
+          color="gray.700"
         >
           Serviços
         </Heading>
@@ -109,6 +111,32 @@ export default function Home() {
 
         </SimpleGrid>
       </Flex>
+
+      <Box
+        as="footer"
+        w="100%"
+        bgColor="blue.700"
+        minH="30"
+        position="relative"
+      >
+        <HeaderDividers />
+
+        <Grid
+          maxW="1220px"
+          py="10"
+          px="8"
+          mx="auto"
+          templateColumns="120px 1fr 80px"
+          align="center"
+        >
+          <Image src="/images/logo-prefeitura-mossoro-branco.png" w="24" />
+
+          <Box alignSelf="center">
+            <Heading alignSelf="center" justify="center" color="gray.200" fontSize="3xl">SESDEM 2021</Heading>
+            <Text fontWeight="bold" textTransform="uppercase" fontSize="sm" color="white">Secretaria de segurança pública, defesa civil, mobilidade urbana e trânsito </Text>
+          </Box>
+        </Grid>
+      </Box>
     </Box>
   )
 }
