@@ -13,7 +13,6 @@ export function ServicesBar() {
       align="center"
       justify="space-between"
       boxShadow="0 0 10px 6px rgba(0,0,0,0.15)"
-      zIndex="20"
     >
       <Image
         src="/images/mossoro-logo.png"
