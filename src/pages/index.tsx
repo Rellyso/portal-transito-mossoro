@@ -1,13 +1,18 @@
 import { Box, Flex, Icon, Text, Button, Link, Divider, Heading, SimpleGrid } from '@chakra-ui/react';
 import Head from 'next/head'
 import NextLink from 'next/link'
+import { ImBooks } from 'react-icons/im';
 import { MdRecordVoiceOver } from 'react-icons/md';
+import { BiTrafficCone } from 'react-icons/bi';
+import { RiFilePaperFill, RiFilePaperLine } from 'react-icons/ri';
 import { BoxFX } from '../components/Animated/BoxFX';
-import { Header } from '../components/Header';
+import { Hero } from '../components/Hero';
 import { HIconList } from '../components/HIconList'
+import { ServiceCard } from '../components/ServiceCard';
 import { ServicesBar } from '../components/ServicesBar';
 
 import styles from '../styles/Home.module.scss';
+import { HiPencilAlt } from 'react-icons/hi';
 
 export default function Home() {
   return (
@@ -16,109 +21,92 @@ export default function Home() {
 
     >
       <Head>
-        <title>GETRAN | Prefeitura de Mossoró</title>
+        <title>SESDEM | Prefeitura de Mossoró</title>
       </Head>
 
       <ServicesBar />
 
-      <Header />
+      <Hero />
 
       <Flex
         as="main"
+        id="services"
         minH="100vh"
         maxW="1140px"
         w="100%"
-        pt="16"
+        py="16"
         px="4"
         mx="auto"
         direction="column"
       >
-        <Heading size="2xl" fontWeight="bold">Serviços</Heading>
+        <Heading
+          size="2xl"
+          fontWeight="500"
+          color="gray.800"
+        >
+          Serviços
+        </Heading>
         <Divider my="4" />
 
-        <SimpleGrid minChildWidth="330px">
-          <BoxFX
-            whileHover={{ scale: 1.01, boxShadow: '0px 0px 0px 2px rgba(0, 0, 0, 0.05)' }}
-            transition={{ ease: "easeOut" }}
+        <SimpleGrid
+          mt="10"
+          minChildWidth="330px"
+          spacing="12"
+        >
+          <ServiceCard
+            title="Solicitar palestra"
+            sector="Educação"
+            description="Clique aqui e solicite uma palestra sobre educação no trânsito."
+            icon={MdRecordVoiceOver}
+            href="#"
+          />
+          <ServiceCard
+            title="Solicitar material educativo"
+            sector="Educação"
+            description="Veja os materiais educativos disponíveis para a comunidade."
+            icon={ImBooks}
+            href="#"
+          />
+          <ServiceCard
+            title="Gerar multas atuais SESDEM"
+            sector="Multas"
+            description="Gere o boleto de sua multa atual com possibilidade de 20% de desconto."
+            icon={RiFilePaperLine}
+            href="#"
+          />
+          <ServiceCard
+            title="Gerar multas antigas SESDEM"
+            sector="Multas"
+            description="Preencher o requerimento de emissão de penalidade, assinatura do titular do veículo junto a CNH ou identidade e documento do veículo."
+            icon={RiFilePaperFill}
+            href="#"
+          />
+          <ServiceCard
+            title="Recorrer de multa SESDEM"
+            sector="Multas"
+            description={
+              <>
+                <Text>1. Documento do proprietário (Identidade ou Habilitação – frente e verso);</Text>
+                <Text>2. Documento do veículo;</Text>
+                <Text>3. Defesa digitada ou em nosso formulário e assinada (OBS.: assinatura igual ao documento que apresentar);</Text>
+                <Text>4. Manda aqui ou pelo nosso e-mail: atendimentotransito@prefeiturademossoro.com.br</Text>
+              </>
+            }
+            icon={HiPencilAlt}
+            href="#"
+          />
+          <ServiceCard
+            title="BOAT - Boletim de acidente"
+            sector="Serviços"
+            description={
+              <>
+                Clique aqui e gere a declaração de acidente de trânsito
+              </>
+            }
+            icon={BiTrafficCone}
+            href="#"
+          />
 
-            mt="10"
-
-            h="500px"
-            bgColor="white"
-            minW="330px"
-            maxW="370px"
-            rounded="60px"
-            px="6"
-            py="28px"
-            boxShadow="0px 0px 5px 4px rgba(0, 0, 0, 0.05)"
-
-            display="flex"
-            flexDir="column"
-            justifyContent="space-between"
-          >
-            <Flex
-              w="100%"
-              bgColor="#00ADEF"
-              rounded="30px"
-              h="180px"
-              align="center"
-              justify="center"
-            >
-              <Icon as={MdRecordVoiceOver} fontSize="160px" color="white" />
-            </Flex>
-
-            <Heading
-              as="h3"
-              size="lg"
-              fontWeight="medium"
-              mt="8"
-            >
-              Solicitar palestra
-            </Heading>
-            <Heading
-              as="h6"
-              size="sm"
-              color="gray.300"
-              fontWeight="medium"
-            >
-              Educação
-            </Heading>
-
-            <Text
-              mt="8"
-              fontFamily="heading"
-            >
-              Clique aqui e solicite uma palestra sobre educação no trânsito.
-            </Text>
-
-            <NextLink
-              href="#"
-            >
-
-              <Button
-                href="#"
-
-                fontSize="2xl"
-                py="6"
-                textDecor="none"
-                rounded="30"
-                mt="auto"
-
-                color="#00ADEF"
-                bg="transparent"
-                borderColor="#00ADEF"
-                borderWidth="4px"
-
-                transition="ease .2s"
-
-                _hover={{
-                  brightness: 0.9
-                }}
-              >
-                ACESSE AQUI
-              </Button>
-            </NextLink>
-          </BoxFX>
         </SimpleGrid>
       </Flex>
     </Box>

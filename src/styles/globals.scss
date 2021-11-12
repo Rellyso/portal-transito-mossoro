@@ -5,6 +5,9 @@ body {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
     Droid Sans, Helvetica Neue, sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   width: calc(100vw - (100vw - 100%));
 }
