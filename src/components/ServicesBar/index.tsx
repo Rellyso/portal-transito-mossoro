@@ -1,27 +1,75 @@
 import { Image } from "@chakra-ui/image";
-import { Box, Flex, Link } from "@chakra-ui/layout";
+import { Box, Flex, Link, HStack } from "@chakra-ui/layout";
+import { useEffect, useState } from "react";
+import { FlexFX } from "../Animated/FlexFX";
+import { HeaderDividers } from "../HeaderDividers";
 
 import styles from './styles.module.scss';
 
 export function ServicesBar() {
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
+  const [isTop, setIsTop] = useState(true);
+
+
+  // cria um event listener de scroll e de resize 
+  useEffect(() => {
+    updateWindowDimensions();
+
+    window.addEventListener('resize', updateWindowDimensions);
+
+    window.addEventListener('scroll', () => {
+      setIsTop((window.scrollY + 1) <= dimensions.height);
+      console.log({ scrollY: window.scrollY + 1, dimensions: dimensions.height })
+    });
+
+
+    return () => removeEventListener('resize', updateWindowDimensions)
+  }, [])
+
+
+  // atualiza tamanho da largura e altura da tela a partir de vh a vw da tela 
+  async function updateWindowDimensions() {
+    const { innerHeight, innerWidth } = window
+
+    setDimensions({
+      width: innerWidth,
+      height: innerHeight
+    })
+
+  }
+
   return (
     <Flex
-      className={styles.services_bar}
+      className={`${styles.services_bar} ${!isTop ? styles.scrolled : ''}`}
       w="100%"
-      bgColor="white"
-      px="8"
-      align="center"
-      justify="space-between"
+      h="20"
+      // bgColor="blue.600"
+      backdropFilter="saturate(180%) blur(15px);"
+      bg="linear-gradient(269.94deg,#a5b0b65f -7.44%,#07469492 99.94%),#023f8475"
       boxShadow="0 0 10px 6px rgba(0,0,0,0.15)"
+      borderBottom="1px solid"
+      borderBottomColor="gray.400"
+      position="fixed"
+      zIndex="500"
     >
-      <Image
-        src="/images/mossoro-logo.png"
-        h="12"
-      />
+      <HeaderDividers bottom />
+      <Flex
+        w="1120px"
+        mx="auto"
+        px="8"
+        align="center"
+        justify="space-between"
+      >
+        <Image
+          src="/images/logo-prefeitura-mossoro-branco.png"
+          h="12"
+        />
 
-      <Box>
-        <Link href="#" color="blue.700" fontWeight="medium">Serviços</Link>
-      </Box>
+        <HStack spacing="4" fontFamily="Poppins">
+          <Link href="#" color="white" fontWeight="semibold">Início</Link>
+          <Link href="#services" color="white" fontWeight="semibold">Serviços</Link>
+        </HStack>
+      </Flex>
     </Flex>
   )
 }

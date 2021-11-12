@@ -1,3 +1,10 @@
 .services_bar {
   height: 60px;
+
+  transform: translateY(-100px);
+  transition: all 0.2s ease-in;
+}
+
+.scrolled {
+  transform: translateY(0);
 }
