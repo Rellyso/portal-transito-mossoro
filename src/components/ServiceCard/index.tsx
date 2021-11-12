@@ -22,7 +22,7 @@ export function ServiceCard({ title, sector, description, icon, href }: Props) {
     >
 
       <BoxFX
-        whileHover={{ scale: 1.01, boxShadow: '0px 0px 0px 2px rgba(0, 0, 0, 0.05)', height: 'max-content' }}
+        whileHover={{ y: -10, boxShadow: '0px 0px 0px 2px rgba(0, 0, 0, 0.05)', height: 'max-content' }}
         transition={{ ease: "easeOut" }}
 
 
@@ -33,7 +33,7 @@ export function ServiceCard({ title, sector, description, icon, href }: Props) {
         rounded="60px"
         px="6"
         py="28px"
-        boxShadow="0px 0px 5px 4px rgba(0, 0, 0, 0.05)"
+        boxShadow="0px 0px 5px 4px rgba(0, 0, 0, 0.04)"
 
         display="grid"
         gridTemplateRows="150px 120px 1fr"
