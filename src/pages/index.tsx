@@ -15,6 +15,7 @@ import styles from '../styles/Home.module.scss';
 import { HiPencilAlt } from 'react-icons/hi';
 import { useEffect, useState } from 'react';
 import { HeaderDividers } from '../components/HeaderDividers';
+import { Section } from '../components/Content/Section';
 
 export default function Home() {
   return (
@@ -30,26 +31,11 @@ export default function Home() {
 
       <Hero />
 
-      <Flex
+      <Section
         as="main"
         id="services"
-        minH="100vh"
-        maxW="1140px"
-        w="100%"
-        py="16"
-        px="4"
-        mx="auto"
-        direction="column"
+        name="Serviços"
       >
-        <Heading
-          size="2xl"
-          fontWeight="semibold"
-          color="gray.700"
-        >
-          Serviços
-        </Heading>
-        <Divider my="4" />
-
         <SimpleGrid
           mt="10"
           minChildWidth="330px"
@@ -110,7 +96,18 @@ export default function Home() {
           />
 
         </SimpleGrid>
-      </Flex>
+      </Section>
+
+      <Section
+        id="contact"
+        name="Contato"
+        bg="#00ADEF"
+        maxW="100%"
+        dark
+        headerDividers
+      >
+
+      </Section>
 
       <Box
         as="footer"
