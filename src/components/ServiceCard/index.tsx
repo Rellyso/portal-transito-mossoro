@@ -23,13 +23,13 @@ export function ServiceCard({ title, sector, description, icon, href }: Props) {
 
       <BoxFX
         whileHover={{ y: -10, boxShadow: '0px 0px 0px 2px rgba(0, 0, 0, 0.05)', height: 'max-content' }}
+        whileFocus={{ y: -10, boxShadow: '0px 0px 0px 2px rgba(0, 0, 0, 0.05)', height: 'max-content' }}
         transition={{ ease: "easeOut" }}
 
 
-        h="420px"
+        h={["420px"]}
         bgColor="white"
         minW="330px"
-        maxW="370px"
         rounded="60px"
         px="6"
         py="28px"
