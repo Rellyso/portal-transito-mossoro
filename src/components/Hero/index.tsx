@@ -1,6 +1,8 @@
 import { Button } from "@chakra-ui/button";
 import { Image } from "@chakra-ui/image";
-import { Box, Flex, Heading, Link, Text } from "@chakra-ui/layout";
+import { Box, Flex, Heading, HStack, Link, Text } from "@chakra-ui/layout";
+import { MenuItem } from "@chakra-ui/menu";
+import { Dropdown } from "../Dropdown";
 import { HIconList } from "../HIconList";
 
 import styles from './styles.module.scss'
@@ -32,6 +34,39 @@ export function Hero() {
           alt="Brasão prefeitura de mossoró"
           className={styles.brasao}
         />
+
+        <Box
+          w="100%"
+          position="absolute"
+          px="8"
+
+          display="flex"
+          align="center"
+          justifyContent="flex-end"
+        >
+          <HStack spacing="4">
+            <Dropdown
+              title="Serviços"
+              items={[
+                { name: 'Solicitar palestra', href: '#services' },
+                { name: 'Solicitar palestra', href: '#services' },
+              ]}
+            />
+
+            <Link
+              href="#services"
+              color="blue.700"
+              fontFamily="Poppins"
+              fontWeight="600"
+              _hover={{
+                textDecoration: 'none',
+              }}
+            >
+              Contato
+            </Link>
+          </HStack>
+        </Box>
+
         <Box className={`${styles.header_dividers} ${styles.dividers_top}`}>
           <span />
           <span />
