@@ -9,7 +9,6 @@ export function ServicesBar() {
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const [isTop, setIsTop] = useState(true);
 
-
   // cria um event listener de scroll e de resize 
   useEffect(() => {
     updateWindowDimensions();
@@ -17,8 +16,8 @@ export function ServicesBar() {
     window.addEventListener('resize', updateWindowDimensions);
 
     window.addEventListener('scroll', () => {
-      setIsTop(window.scrollY <= dimensions.height);
-      console.log({ scrollY: window.scrollY + 1, dimensions: dimensions.height })
+      setIsTop(window.scrollY <= dimensions.height * 0.15);
+      // console.log({ scrollY: window.scrollY + 1, dimensions: dimensions.height })
     });
 
 
@@ -34,7 +33,6 @@ export function ServicesBar() {
       width: innerWidth,
       height: innerHeight
     })
-
   }
 
   return (
@@ -46,7 +44,7 @@ export function ServicesBar() {
       backdropFilter="saturate(180%) blur(15px);"
       bg="linear-gradient(269.94deg,#a5b0b65f -7.44%,#07469492 99.94%),#023f8475"
       boxShadow="0 0 10px 6px rgba(0,0,0,0.15)"
-      borderBottom="1px solid"
+      // borderBottom="1px solid"
       borderBottomColor="gray.400"
       position="fixed"
       zIndex="500"
@@ -67,6 +65,7 @@ export function ServicesBar() {
         <HStack spacing="4" fontFamily="Poppins">
           <Link href="#" color="white" fontWeight="semibold">Início</Link>
           <Link href="#services" color="white" fontWeight="semibold">Serviços</Link>
+          <Link href="#contact" color="white" fontWeight="semibold">Contato</Link>
         </HStack>
       </Flex>
     </Flex>
