@@ -66,6 +66,7 @@ export function ServicesBar() {
           <Link href="#" color="white" fontWeight="semibold">Início</Link>
           <Link href="#services" color="white" fontWeight="semibold">Serviços</Link>
           <Link href="#contact" color="white" fontWeight="semibold">Contato</Link>
+          <Link href="#" color="white" fontWeight="semibold">Organograma</Link>
         </HStack>
       </Flex>
     </Flex>
