@@ -49,12 +49,16 @@ export function Hero() {
               title="Serviços"
               items={[
                 { name: 'Solicitar palestra', href: '#services' },
-                { name: 'Solicitar palestra', href: '#services' },
+                { name: 'Solicitar material educativo', href: '#services' },
+                { name: 'Gerar multas atuais', href: '#services' },
+                { name: 'Gerar multas antigas', href: '#services' },
+                { name: 'Recorrer multas', href: '#services' },
+                { name: 'Recorrer BOAT - Boletim de acidente', href: '#services' },
               ]}
             />
 
             <Link
-              href="#services"
+              href="#contact"
               color="blue.700"
               fontFamily="Poppins"
               fontWeight="600"
@@ -63,6 +67,18 @@ export function Hero() {
               }}
             >
               Contato
+            </Link>
+
+            <Link
+              href="#contact"
+              color="blue.700"
+              fontFamily="Poppins"
+              fontWeight="600"
+              _hover={{
+                textDecoration: 'none',
+              }}
+            >
+              Organograma
             </Link>
           </HStack>
         </Box>
