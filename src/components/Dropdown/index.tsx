@@ -18,7 +18,7 @@ type Props = {
 export function Dropdown({ title, items }: Props) {
   return (
     <Menu isLazy >
-      <MenuButton rightIcon={<ChevronDownIcon color="blue.700" />} color="blue.700" fontFamily="Poppins" fontWeight="600">{title}</MenuButton>
+      <MenuButton color="blue.700" fontFamily="Poppins" fontWeight="600">{title}</MenuButton>
       <MenuList>
         {/* MenuItems are not rendered unless Menu is open */}
         {items.map(item => (
